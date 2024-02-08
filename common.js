@@ -24,6 +24,7 @@ function calculate(p,d){
 		var chk = validate(pace);
 		if(chk != null) return chk;
 	//---------------------------
+	var pc = paceCal(pace,dist);
 	//---------------------------
 		var min = dist * pace;
 		var hour = 0;
