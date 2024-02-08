@@ -8,6 +8,14 @@ function validate(pace){
 		return {"status":0,"message":msg,"hour":0,"min":0};
 	}
 }
+function paceCal(pace,dist){
+	var min =dist*pace;
+	var hour = 0;
+	if(min>60){
+		hour = math.floor(min/60);
+		min = min % 60;
+	}
+}
 function calculate(p,d){
 		var msg = "";
 		var pace = parseFloat(p);
@@ -15,6 +23,8 @@ function calculate(p,d){
 	//---------------------------
 		var chk = validate(pace);
 		if(chk != null) return chk;
+	//---------------------------
+		var pc = paceCal(pace,dist);
 	//---------------------------
 		var min = dist * pace;
 		var hour = 0;
